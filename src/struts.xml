@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	
+	<package name="studentInfo" namespace="/" extends="struts-default">
+		
+		<action name="student" class="com.pan.action.StudentAction">
+			<result name="success">/main.jsp</result>
+			<result name="error">/login.jsp</result>
+			<result name="logout" type="redirect">/login.jsp</result>
+			<result name="save" type="redirectAction">student!list</result>
+		</action>
+		
+		<action name="paper" class="com.pan.action.PaperAction">
+			<result name="success">/main.jsp</result>
+			<result name="save" type="redirectAction">paper!paperList</result>
+		</action>
+		
+		<action name="exam" class="com.pan.action.ExamAction">
+			<result name="success">/main.jsp</result>
+		</action>
+		
+		<action name="question" class="com.pan.action.QuestionAction">
+			<result name="success">/main.jsp</result>
+			<result name="save" type="redirectAction">question!list</result>
+		</action>
+		
+		<action name="manager" class="com.pan.action.ManagerAction">
+			<result name="success">/main.jsp</result>
+			<result name="error">/login2.jsp</result>
+			<result name="logout" type="redirect">/login2.jsp</result>
+		</action>
+		
+	</package>
+	
+
+     
+</struts>
